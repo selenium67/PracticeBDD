@@ -3,13 +3,19 @@ package com.mvn.bdd;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+
 public class Reports {
-	
+
 	public WebDriver driver = null;
+
 	
+
 	public void waitForPageLoaded() {
 		ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
 

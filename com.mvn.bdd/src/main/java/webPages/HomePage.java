@@ -17,7 +17,6 @@ public class HomePage extends Reports {
 
 	@FindBy(how = How.ID, using = "loginButton")
 	private WebElement login;
-
 	public WebElement getLoginButton() {
 		return login;
 	}

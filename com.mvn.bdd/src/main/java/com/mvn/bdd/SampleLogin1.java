@@ -5,6 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -12,15 +15,17 @@ import webPages.HomePage;
 import webPages.LoginPage;
 
 public class SampleLogin1 extends Reports {
+	
+	
 
-	@Given("^User is on Home Page$")
-	public void user_is_on_Home_Page() {
+	//@Given("^User is on Home Page$")
+	/*public void user_is_on_Home_Page() {
 
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Suuresh\\eclipse-workspace\\libs\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://q4-testh.aviall.com/aviallstorefront/");
 		driver.manage().window().maximize();
-	}
+	}*/
 
 	@Given("^Click on Login$")
 	public void click_on_Login() {
@@ -30,7 +35,7 @@ public class SampleLogin1 extends Reports {
 		home.getLoginButton().click();
 	}
 
-	@When("^I Entered Username and Password$")
+	@Given("^I Entered Username and Password$")
 	public void i_Entered_Username_and_Password() {
 
 		// Create object of LoginPage Class
@@ -58,7 +63,7 @@ public class SampleLogin1 extends Reports {
 		
 	}
 
-	@When("^I Entered \"([^\"]*)\" and \"([^\"]*)\"$")
+	@Given("^I Entered \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void i_Entered_and(String arg1, String arg2) throws Throwable {
 
 		// Create object of LoginPage Class
@@ -81,8 +86,6 @@ public class SampleLogin1 extends Reports {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", login.getLogoutbtn());
-		driver.close();
-
 	}
 
 }
